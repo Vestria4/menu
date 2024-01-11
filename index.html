@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://grabvr.quest/player/">
+    <meta property="og:title" content="Grab Player Viewer">
+    <meta property="og:description" content="View player cosmetics preview from grab level browser!">
+    <title>Player Customiser</title>
+    <script id="template" type="notjs">
+        <div class="description">Scene $</div>
+        <div class="scene"></div>
+    </script>
+    <script type="module" src="player.js" defer></script>
+
+    <style>
+        /* roboto-regular - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 400;
+          src: url('../fonts/roboto-v30-latin-regular.woff2') format('woff2');
+        }
+        /* roboto-italic - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Roboto';
+          font-style: italic;
+          font-weight: 400;
+          src: url('../fonts/roboto-v30-latin-italic.woff2') format('woff2');
+        }
+        /* roboto-700 - latin */
+        @font-face {
+          font-display: swap;
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 700;
+          src: url('../fonts/roboto-v30-latin-700.woff2') format('woff2');
+        }
+
+        body {
+            font-family: 'Roboto';
+            font-weight: 700;
+            background-image: linear-gradient(#84c1f0, #e1f6ff, #84c1f0);
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            height: 100vh;
+            flex-direction: row;
+            flex-wrap: wrap-reverse;
+            margin: 0;
+            gap: 30px;
+        }
+
+        /* ... (Styles from the first HTML) ... */
+
+        body {
+            background-image: linear-gradient(#90C9F4, #E6FBFE, #90C9F4);
+            color: #106BA0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            position: relative;
+            transition: background-image 0.3s;
+        }
+
+        img {
+            width: 525px;
+            margin-bottom: 13px;
+        }
+
+        button {
+            margin: 14px;
+            padding: 10px 15px;
+            font-size: 60px;
+            font-weight: 450;
+            background-color: transparent;
+            color: #106BA0;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: transparent;
+        }
+
+        p.discord-link {
+            margin-top: 35px;
+            font-size: 45px;
+            color: #7A93C9;
+            cursor: not-allowed;
+            padding-left: 30px;
+            font-weight: 415;
+            text-align: center;
+        }
+    </style>
+</head>
+<body id="body1">
+    <canvas class="player-model"></canvas> <canvas id="canvas"></canvas>
+    <div id="customizations">
+        <span id="back-btn" style="display: none;">Back</span>
+
+        <div id="categories-content">
+            <span id="cosmetics">Cosmetics</span>
+            <span id="primary">Change Main Color</span>
+            <span id="secondary">Change Second Color</span>
+            <span id="Head" style="display: none;">Head</span>
+            <span class="final" id="Body" style="display: none;">Body</span>
+            <span class="final" id="Hands" style="display: none;">Hands</span>
+            <span class="final" id="Grapples" style="display: none;">Grapples</span>
+            <span class="final" id="Checkpoints" style="display: none;">Checkpoints</span>
+            <span class="final" id="Heads" style="display: none;">Heads</span>
+            <span class="final" id="Hats" style="display: none;">Hats</span>
+            <span class="final" id="Facewear" style="display: none;">Facewear</span>
+        </div>
+        <div id="content"></div>
+    </div>
+
+    <img src="demo_logo.png" alt="GRAB">
+    
+    <button>JOIN</button>
+    <button>HOST</button>
+    <button>SETTINGS</button>
+    <button>CREDITS</button>
+
+    <p class="discord-link">Join the GRAB Discord: <br> https://discord.gg/jScgbSF</p>
+</body>
+</html>
